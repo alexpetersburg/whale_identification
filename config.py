@@ -5,9 +5,9 @@ configurations = {
     1: dict(
         SEED = 1337, # random seed for reproduce results
 
-        DATA_ROOT = '/home/peter/Project/face.evoLVe.PyTorch/data', # the parent root where your train/val/test data are stored
-        MODEL_ROOT = '/home/peter/Project/face.evoLVe.PyTorch/model', # the root to buffer your checkpoints
-        LOG_ROOT = '/home/peter/Project/face.evoLVe.PyTorch/log', # the root to log your train/val status
+        DATA_ROOT = '/home/user/itmo/whale_identification/data/whale_recognition_splitted', # the parent root where your train/val/test data are stored
+        MODEL_ROOT = '/home/user/itmo/whale_identification/model', # the root to buffer your checkpoints
+        LOG_ROOT = '/home/user/itmo/whale_identification/log', # the root to log your train/val status
         BACKBONE_RESUME_ROOT = './', # the root to resume training from a saved checkpoint
         HEAD_RESUME_ROOT = './', # the root to resume training from a saved checkpoint
 
@@ -19,7 +19,7 @@ configurations = {
         RGB_MEAN = [0.5, 0.5, 0.5], # for normalize inputs to [-1, 1]
         RGB_STD = [0.5, 0.5, 0.5],
         EMBEDDING_SIZE = 512, # feature dimension
-        BATCH_SIZE = 512,
+        BATCH_SIZE = 100,
         DROP_LAST = True, # whether drop the last batch to ensure consistent batch_norm statistics
         LR = 0.1, # initial LR
         NUM_EPOCH = 125, # total epoch number (use the firt 1/25 epochs to warm up)
@@ -27,10 +27,10 @@ configurations = {
         MOMENTUM = 0.9,
         STAGES = [35, 65, 95], # epoch stages to decay learning rate
 
-        DEVICE = torch.device("cuda:0" if torch.cuda.is_available() else "cpu"),
-        MULTI_GPU = True, # flag to use multiple GPUs; if you choose to train with single GPU, you should first run "export CUDA_VISILE_DEVICES=device_id" to specify the GPU card you want to use
-        GPU_ID = [0, 1, 2, 3], # specify your GPU ids
-        PIN_MEMORY = True,
+        DEVICE = torch.device("cpu" if torch.cuda.is_available() else "cpu"),
+        MULTI_GPU = False, # flag to use multiple GPUs; if you choose to train with single GPU, you should first run "export CUDA_VISILE_DEVICES=device_id" to specify the GPU card you want to use
+        GPU_ID = None, # specify your GPU ids
+        PIN_MEMORY = False,
         NUM_WORKERS = 0,
 ),
 }
