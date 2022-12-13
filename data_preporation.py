@@ -48,7 +48,8 @@ class Data:
             if whale_id == "new_whale":
                 if self.new_whale_counter < self.trashold_new_whale_counter:
                     whale_dir = os.path.join(self.out_dataset_dir, f"{whale_id}")
-                self.new_whale_counter += 1
+                    self.new_whale_counter += 1
+                else: continue
             else:
                 whale_dir = os.path.join(self.out_dataset_dir, whale_id)
             os.makedirs(whale_dir, exist_ok=True)
