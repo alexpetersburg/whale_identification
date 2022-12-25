@@ -1,9 +1,11 @@
-FROM python:3.8
+FROM alpine
+
+RUN apk add nodejs npm
 
 WORKDIR /app
-COPY . /app
+COPY . .
+RUN npm install
+RUN npm run build
+RUN npm install -g serve
 
-RUN pip install --upgrade pip
-RUN pip install -r requirements.txt
-
-CMD ["uvicorn", "main:app", "--host=0.0.0.0", "--port=8000", "--root-path=/study"]
+CMD serve -l 8000 -s build

@@ -1,0 +1,49 @@
+.title{
+    display: flex;
+    font-size: 30px;
+    margin-top: 110px;
+    justify-content: center;
+}
+
+.title2{
+    display: flex;
+    font-size: 20px;
+    justify-content: center;
+}
+
+.upload {
+    margin-top: 50px;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.uploadStatus {
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+}
+
+.show_image{
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+}
+
+
+.image {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.back{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.inputfile {
+    margin-top: 20px;
+    justify-content: center;
+}
